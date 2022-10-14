@@ -1,10 +1,5 @@
-.input-field
-  width: 50%
-  position: absolute
-  top: 30%
-  left: 50%
-  transform: translate(-50%, -50%)
 :host ::ng-deep .mat-form-field
+  width: 100%
   .mat-form-field-wrapper
     height: 5rem
     font-size: 1.3rem
@@ -17,6 +12,11 @@
       background-color: none
       border-radius: 2.5rem
       padding: 0 2.5rem
+      -moz-box-shadow: 4px 6px 20px rgba(0, 54, 140, .5)
+      -webkit-box-shadow: 4px 6px 20px rgba(0, 54, 140, .5)
+      box-shadow: 4px 6px 50px rgba(0, 54, 140, .5)
+    .mat-form-field-infix
+      padding: 0.75em 0 0.75em 0
     .mat-form-field-underline
       display: none
     .mat-input-element

@@ -1,4 +1,7 @@
-<div class="container" style="width: 100vw;height: 100vh">
-  <app-nav></app-nav>
-  <app-input></app-input>
+<div class="home">
+  <app-nav [level]="currentLevel" [chapter]="currentChapter"></app-nav>
+  <div class="input-container">
+    <app-input class="app-input" [word]="currentList[currentInd]"></app-input>
+    <app-word [word]="currentList[currentInd]"></app-word>
+  </div>
 </div>

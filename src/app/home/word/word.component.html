@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-title>
+    <span [style.color]="diffInds.includes(ind) ? '#F2711B' : '' " *ngFor="let item of word.hiragana.split(''); let ind = index">{{item}}</span>
+  </mat-card-title>
+  <mat-card-subtitle>{{word.wordName}}</mat-card-subtitle>
+  <mat-card-content>{{word.correctDesc}}</mat-card-content>
+</mat-card>

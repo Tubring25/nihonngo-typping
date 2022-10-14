@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.sass']
 })
 export class NavComponent implements OnInit {
-
+  @Input() level: LEVEL_TYPE = 'N1'
+  @Input() chapter: number = 1
   constructor() { }
 
   ngOnInit(): void {

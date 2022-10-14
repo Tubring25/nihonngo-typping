@@ -6,8 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./spec-button.component.sass']
 })
 export class SpecButtonComponent implements OnInit {
-  @Input() buttonName: string = 'Button'
-  @Input() isDisabled: boolean = false
+  @Input() buttonName: string | number = 'Button'
   constructor() { }
 
   ngOnInit(): void {
