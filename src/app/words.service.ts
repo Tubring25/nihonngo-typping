@@ -7,11 +7,12 @@ export class WordsService {
 
   constructor() { }
   private allList: Word[] = []
-  public perChapterNum: number = 30
-  protected currentLevel: LEVEL_TYPE = 'N1'
-  protected currentChapter: number = 1
+  public perChapterNum: number = 3
+  public currentLevel: LEVEL_TYPE = 'N1'
+  public currentChapter: number = 1
 
   wordChangeEvent: EventEmitter<number[]> = new EventEmitter()
+  indChangeEvent: EventEmitter<boolean> = new EventEmitter()
 
   initList() {
     this.allList = require(`../assets/${this.currentLevel.toLowerCase()}/${this.currentChapter}.json`).data.map((item: any) => {

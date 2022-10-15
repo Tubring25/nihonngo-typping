@@ -1,4 +1,4 @@
-import {Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { WordsService } from "../../words.service";
 
 @Component({
@@ -9,7 +9,8 @@ import { WordsService } from "../../words.service";
 export class InputComponent implements OnInit {
   @Input() word!: Word
   constructor(
-    private wordService: WordsService
+    private wordService: WordsService,
+    private changeDetector: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -20,8 +21,12 @@ export class InputComponent implements OnInit {
   }
   set iptVal(val:string) {
     this.diffInds.clear()
-    this.diffWord(val, this.word.hiragana)
-    this._iptVal = val
+    if(val === this.word.hiragana　|| val === this.word.wordName) {
+      this.wordService.indChangeEvent.emit(true)
+    }　else {
+      this._iptVal = val
+      this.diffWord(val, this.word.hiragana)
+    }
   }
   diffInds: Map<any, any> = new Map()
   diffWord(input: string, standard: string) {
@@ -34,4 +39,13 @@ export class InputComponent implements OnInit {
     }
     this.wordService.wordChangeEvent.emit(Array.from(this.diffInds.values()))
   }
+
+  ngOnChanges() {
+    // FIXME: 单词整体输入时，需要手动清除输入框中的文字
+    this._iptVal = ''
+    this.changeDetector.markForCheck()
+    this.changeDetector.detectChanges()
+  }
+
+
 }
