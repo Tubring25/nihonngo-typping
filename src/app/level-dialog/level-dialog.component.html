@@ -1,0 +1,8 @@
+<h3 mat-dialog-title>请选择等级</h3>
+<mat-divider></mat-divider>
+<div class="level_container">
+  <button [ngClass]="[item === selectedLevel ? 'selected' : '', 'level_btn',]" *ngFor="let item of LevelList" (click)="selectLevel(item)">{{item}}</button>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" >No Thanks</button>
+</div>

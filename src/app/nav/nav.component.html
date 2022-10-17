@@ -1,7 +1,7 @@
 <div class="nav">
   <h3 class="title">日本語タイプ</h3>
   <div class="level">
-    <app-spec-button [buttonName]="'Level：' + level"></app-spec-button>
+    <app-spec-button [buttonName]="'Level：' + level" (click)="openLevelDialog()"></app-spec-button>
     <app-spec-button [buttonName]="'Chapter' + chapter"></app-spec-button>
   </div>
   <div class="options">

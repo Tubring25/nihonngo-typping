@@ -36,14 +36,14 @@ export class WordsService {
     return ['N1' , 'N2' , 'N3' , 'N4N5']
   }
 
-  changeLevel(level: LEVEL_TYPE): Word[]{
+  changeLevel(level: LEVEL_TYPE): LEVEL_TYPE{
     this.currentLevel = level
     this.currentChapter = 1
-    return this.currentList
+    return this.currentLevel
   }
 
-  changeChapter(chapter: number): Word[]{
+  changeChapter(chapter: number): number{
     this.currentChapter = chapter
-    return this.currentList
+    return this.currentChapter
   }
 }

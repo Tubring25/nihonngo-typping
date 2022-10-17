@@ -13,6 +13,9 @@ import { WordComponent } from './home/word/word.component';
 import { SpecButtonComponent } from './spec-button/spec-button.component';
 import {MatCardModule} from "@angular/material/card";
 import {FormsModule} from "@angular/forms";
+import { LevelDialogComponent } from './level-dialog/level-dialog.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     NavComponent,
     InputComponent,
     WordComponent,
-    SpecButtonComponent
+    SpecButtonComponent,
+    LevelDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import {FormsModule} from "@angular/forms";
     MatButtonModule,
     MatInputModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
