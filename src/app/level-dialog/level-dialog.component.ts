@@ -16,13 +16,34 @@ export class LevelDialogComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  LevelList: LEVEL_TYPE[] = ['N1', "N2", "N3", "N4N5"]
+  levelStyle: object = {
+    width: '8rem',
+    height: '4rem',
+    lineHeight: '4rem',
+    fontSize: '2rem',
+  }
+  LevelList: LEVEL_TYPE[] = this.wordService.getLevelList()
   selectedLevel: LEVEL_TYPE = this.wordService.currentLevel
   selectLevel(level: LEVEL_TYPE) : void {
-    this.selectedLevel = this.wordService.changeLevel(level)
+    this.selectedLevel = level
+  }
+
+  chapterList: number[] = this.wordService.getChapterList()
+  selectedChapter: number = this.wordService.currentChapter
+  selectChapter(chapter: number) : void {
+    this.selectedChapter = chapter
+  }
+  chapterStyle: object = {
+    width: '4rem',
+    height: '2rem',
+    lineHeight: '2rem',
+    fontSize: '1rem',
   }
 
   onNoClick(): void {
+    this.wordService.changeLevel(this.selectedLevel)
+    this.wordService.changeChapter(this.selectedChapter)
+    this.wordService.listChangeEvent.emit(true)
     this.dialogRef.close();
   }
 }

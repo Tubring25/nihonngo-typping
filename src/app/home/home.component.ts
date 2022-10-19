@@ -14,11 +14,15 @@ export class HomeComponent implements OnInit {
     wordService.indChangeEvent.subscribe( () => {
       if(this.currentInd < this.wordService.perChapterNum - 1) {
         this.currentInd += 1
-        console.log('currentInd')
       } else {
         // TODO: 章节完成提示
         console.log('🎉 Chapter Finished!')
       }
+    })
+    wordService.listChangeEvent.subscribe(() => {
+      this.currentList = this.wordService.currentList
+      this.currentLevel = this.wordService.currentLevel
+      this.currentChapter = this.wordService.currentChapter
     })
   }
 
