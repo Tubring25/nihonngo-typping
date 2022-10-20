@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { LevelDialogComponent } from '../level-dialog/level-dialog.component';
 
 @Component({
@@ -18,14 +18,8 @@ export class NavComponent implements OnInit {
   }
 
   openLevelDialog() {
-    const dialogRef = this.dialog.open(LevelDialogComponent, {
+    this.dialog.open(LevelDialogComponent, {
       width: '60%'
-    })
-    dialogRef.afterOpened().subscribe(() => {
-      console.log('Dialog open')
-    })
-    dialogRef.afterClosed().subscribe(()=> {
-      console.log('Dialog closed')
     })
   }
 

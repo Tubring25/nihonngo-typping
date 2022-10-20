@@ -7,9 +7,9 @@ export class WordsService {
 
   constructor() { }
   private allList: Word[] = []
-  public perChapterNum: number = 3
+  public perChapterNum: number = 1
   public currentLevel: LEVEL_TYPE = 'N1'
-  public currentChapter: number = 1
+  public currentChapter: number = 30
 
   wordChangeEvent: EventEmitter<number[]> = new EventEmitter()
   indChangeEvent: EventEmitter<boolean> = new EventEmitter()
